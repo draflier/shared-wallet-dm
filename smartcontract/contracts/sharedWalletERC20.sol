@@ -21,8 +21,8 @@ contract SharedWalletERC20 {
         _;
     }
 
-    function depositMoney(uint256 intAmt) public payable isWalletOwner(msg.sender) {        
-        //walletBalance += msg.value;
+    function depositMoney(uint256 intAmt) public isWalletOwner(msg.sender) {        
+        walletBalance += intAmt;
         m_token.transferFrom(msg.sender,address(this),intAmt);
     }
 
@@ -30,7 +30,7 @@ contract SharedWalletERC20 {
         walletName = _name;
     }
 
-    function withDrawMoney(uint256 intAmt) public payable isWalletOwner(msg.sender) {
+    function withDrawMoney(uint256 intAmt) public isWalletOwner(msg.sender) {
         walletBalance -= intAmt;
         m_token.transfer(msg.sender,intAmt);
     }

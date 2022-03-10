@@ -13,7 +13,7 @@ function App() {
   const [currentAddress, setCurrentAddress] = useState(null);
   const [error, setError] = useState(null);
 
-  const contractAddress = '0xE8D54a49f21E0536D219A4774A1A513175d8Ffba';
+  const contractAddress = '0xCc4f8c7754d140d1937Bede3BB84964Dc7E756A3';
   const tokenDMAddress = '0x9FF5006291842eBbfD13c53E3f7BE7378cD5B7eD';
   const contractABI = abi.abi;
 
@@ -263,7 +263,7 @@ function App() {
               value={inputValue.deposit}
             />
             <button
-              className="btn-purple"
+              className="btn-red"
               onClick={approveTokenHandler}>Approve Draf Meme</button>
             <button
               className="btn-purple"
