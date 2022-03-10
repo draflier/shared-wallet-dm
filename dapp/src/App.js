@@ -246,12 +246,12 @@ function App() {
 
   return (
     <main className="main-container">
-      <h2 className="headline"><span className="headline-gradient">Shared Wallet Contract Project</span> 💰</h2>
+      <h2 className="headline"><span className="headline-gradient">Draf Meme Coin Shared Wallet</span> 💰</h2>
       <section className="customer-section px-10 pt-5 pb-10">
         {error && <p className="text-2xl text-red-700">{error}</p>}
         <div className="mt-5">
           {currentWalletName === "" && isWalletOwner ?
-            <p>"Setup the name of your shared wallet." </p> :
+            <p>"Setup the name of your Draf Meme Coin shared wallet." </p> :
             <p className="text-3xl font-bold">{currentWalletName}</p>
           }
         </div>
@@ -262,7 +262,7 @@ function App() {
               className="input-style"
               onChange={handleInputChange}
               name="deposit"
-              placeholder="0.0000 ETH"
+              placeholder="0.0000 DM"
               value={inputValue.deposit}
             />
             <button
@@ -280,13 +280,13 @@ function App() {
               className="input-style"
               onChange={handleInputChange}
               name="withdraw"
-              placeholder="0.0000 ETH"
+              placeholder="0.0000 DM"
               value={inputValue.withdraw}
             />
             <button
               className="btn-purple"
               onClick={withDrawMoneyHandler}>
-              Withdraw Money In ETH
+              Withdraw Draf Meme
             </button>
           </form>
         </div>
