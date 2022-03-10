@@ -191,7 +191,7 @@ function App() {
         const signer = provider.getSigner();
         const walletContract = new ethers.Contract(contractAddress, contractABI, signer);
 
-        const txn = await walletContract.depositMoney({ value: ethers.utils.parseEther(inputValue.deposit) ,gasLimit: 5000000});
+        const txn = await walletContract.depositMoney(ethers.utils.parseEther(inputValue.deposit));
         console.log("Deposting money...");
         await txn.wait();
         console.log("Deposited money...done", txn.hash);
@@ -215,10 +215,7 @@ function App() {
         const signer = provider.getSigner();
         const walletContract = new ethers.Contract(contractAddress, contractABI, signer);
 
-        let myAddress = await signer.getAddress()
-        console.log("provider signer...", myAddress);
-
-        const txn = await walletContract.withDrawMoney(myAddress, ethers.utils.parseEther(inputValue.withdraw),{ gasLimit: 5000000 });
+        const txn = await walletContract.withDrawMoney(ethers.utils.parseEther(inputValue.withdraw),{ gasLimit: 5000000 });
         console.log("Withdrawing money...");
         await txn.wait();
         console.log("Money with drew...done", txn.hash);
