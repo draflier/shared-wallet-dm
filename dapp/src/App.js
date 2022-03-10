@@ -13,7 +13,7 @@ function App() {
   const [currentAddress, setCurrentAddress] = useState(null);
   const [error, setError] = useState(null);
 
-  const contractAddress = '0xe7c3bfDb6Ae1d2d31A8CEdd53D8F1E354B626387';
+  const contractAddress = '0xE8D54a49f21E0536D219A4774A1A513175d8Ffba';
   const tokenDMAddress = '0x9FF5006291842eBbfD13c53E3f7BE7378cD5B7eD';
   const contractABI = abi.abi;
 
