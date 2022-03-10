@@ -167,7 +167,7 @@ function App() {
         const signer = provider.getSigner();
         const tokenContract = new ethers.Contract(tokenDMAddress, tokenDM.abi, signer);
 
-        const txn = await tokenContract.approve(contractAddress,ethers.utils.parseEther(inputValue.deposit));
+        const txn = await tokenContract.approve(contractAddress,ethers.utils.parseUnits(inputValue.deposit,18));
         console.log("Approving Draf Meme...");
         await txn.wait();
         console.log("Approved Draf Meme...done", txn.hash);
@@ -191,7 +191,7 @@ function App() {
         const signer = provider.getSigner();
         const walletContract = new ethers.Contract(contractAddress, contractABI, signer);
 
-        const txn = await walletContract.depositMoney(ethers.utils.parseEther(inputValue.deposit));
+        const txn = await walletContract.depositMoney(ethers.utils.parseUnits(inputValue.deposit,18));
         console.log("Deposting money...");
         await txn.wait();
         console.log("Deposited money...done", txn.hash);
